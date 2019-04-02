@@ -163,14 +163,14 @@ jhipster:
         from: ifris_gateway@localhost
     swagger:
         default-include-pattern: /api/.*
-        title: ifris_gateway API
-        description: ifris_gateway API documentation
+        title: IFRIS Gateway API
+        description: IFRIS Gateway API documentation
         version: 0.0.1
         terms-of-service-url:
-        contact-name:
+        contact-name: Edwin Njeru
         contact-url:
-        contact-email:
-        license:
+        contact-email: mailnjeru@gmail.com
+        license: MIT
         license-url:
 
 # ===================================================================
