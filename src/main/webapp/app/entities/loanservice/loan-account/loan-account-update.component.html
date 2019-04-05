@@ -1,0 +1,289 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="ifris-loan-account-heading" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.home.createOrEditLabel">Create or edit a Loan Account</h2>
+            <div>
+                <ifris-alert-error></ifris-alert-error>
+                <div class="form-group" [hidden]="!loanAccount.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="loanAccount.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.sbu" for="field_sbu">Sbu</label>
+                    <input type="text" class="form-control" name="sbu" id="field_sbu"
+                        [(ngModel)]="loanAccount.sbu" required/>
+                    <div [hidden]="!(editForm.controls.sbu?.dirty && editForm.controls.sbu?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sbu?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.rmCode" for="field_rmCode">Rm Code</label>
+                    <input type="text" class="form-control" name="rmCode" id="field_rmCode"
+                        [(ngModel)]="loanAccount.rmCode" required/>
+                    <div [hidden]="!(editForm.controls.rmCode?.dirty && editForm.controls.rmCode?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.rmCode?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.glCode" for="field_glCode">Gl Code</label>
+                    <input type="text" class="form-control" name="glCode" id="field_glCode"
+                        [(ngModel)]="loanAccount.glCode" required/>
+                    <div [hidden]="!(editForm.controls.glCode?.dirty && editForm.controls.glCode?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.glCode?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.schemeCode" for="field_schemeCode">Scheme Code</label>
+                    <input type="text" class="form-control" name="schemeCode" id="field_schemeCode"
+                        [(ngModel)]="loanAccount.schemeCode" required/>
+                    <div [hidden]="!(editForm.controls.schemeCode?.dirty && editForm.controls.schemeCode?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.schemeCode?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.customerCode" for="field_customerCode">Customer Code</label>
+                    <input type="text" class="form-control" name="customerCode" id="field_customerCode"
+                        [(ngModel)]="loanAccount.customerCode" required/>
+                    <div [hidden]="!(editForm.controls.customerCode?.dirty && editForm.controls.customerCode?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.customerCode?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.accountNumber" for="field_accountNumber">Account Number</label>
+                    <input type="text" class="form-control" name="accountNumber" id="field_accountNumber"
+                        [(ngModel)]="loanAccount.accountNumber" required minlength="10"/>
+                    <div [hidden]="!(editForm.controls.accountNumber?.dirty && editForm.controls.accountNumber?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.accountNumber?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.accountNumber?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 10 }">
+                        This field is required to be at least 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.accountName" for="field_accountName">Account Name</label>
+                    <input type="text" class="form-control" name="accountName" id="field_accountName"
+                        [(ngModel)]="loanAccount.accountName" required/>
+                    <div [hidden]="!(editForm.controls.accountName?.dirty && editForm.controls.accountName?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.accountName?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.currencyCode" for="field_currencyCode">Currency Code</label>
+                    <input type="text" class="form-control" name="currencyCode" id="field_currencyCode"
+                        [(ngModel)]="loanAccount.currencyCode" required minlength="3" pattern="[A-Z]{3}"/>
+                    <div [hidden]="!(editForm.controls.currencyCode?.dirty && editForm.controls.currencyCode?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.currencyCode?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.currencyCode?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 3 }">
+                        This field is required to be at least 3 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.currencyCode?.errors?.pattern" jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Currency Code' }">
+                            This field should follow pattern for "Currency Code".
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.openingDate" for="field_openingDate">Opening Date</label>
+                    <div class="input-group">
+                        <input id="field_openingDate" type="text" class="form-control" name="openingDate" ngbDatepicker  #openingDateDp="ngbDatepicker" [(ngModel)]="loanAccount.openingDate"
+                        required/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="openingDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div [hidden]="!(editForm.controls.openingDate?.dirty && editForm.controls.openingDate?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.openingDate?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.accountBalance" for="field_accountBalance">Account Balance</label>
+                    <input type="number" class="form-control" name="accountBalance" id="field_accountBalance"
+                        [(ngModel)]="loanAccount.accountBalance" required min="0" jhiMin="0"/>
+                    <div [hidden]="!(editForm.controls.accountBalance?.dirty && editForm.controls.accountBalance?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.accountBalance?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.accountBalance?.errors?.min" jhiTranslate="entity.validation.min" [translateValues]="{ min: 0 }">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.accountBalance?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.limitAmount" for="field_limitAmount">Limit Amount</label>
+                    <input type="number" class="form-control" name="limitAmount" id="field_limitAmount"
+                        [(ngModel)]="loanAccount.limitAmount" required min="0" jhiMin="0"/>
+                    <div [hidden]="!(editForm.controls.limitAmount?.dirty && editForm.controls.limitAmount?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.limitAmount?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.limitAmount?.errors?.min" jhiTranslate="entity.validation.min" [translateValues]="{ min: 0 }">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.limitAmount?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.systemClassification" for="field_systemClassification">System Classification</label>
+                    <select class="form-control" name="systemClassification" [(ngModel)]="loanAccount.systemClassification" id="field_systemClassification"  required>
+                        <option value="NORMAL">{{'ifrisGatewayApp.RiskClass.NORMAL' | translate}}</option>
+                        <option value="WATCH">{{'ifrisGatewayApp.RiskClass.WATCH' | translate}}</option>
+                        <option value="SUBSTANDARD">{{'ifrisGatewayApp.RiskClass.SUBSTANDARD' | translate}}</option>
+                        <option value="DOUBTFUL">{{'ifrisGatewayApp.RiskClass.DOUBTFUL' | translate}}</option>
+                        <option value="LOSS">{{'ifrisGatewayApp.RiskClass.LOSS' | translate}}</option>
+                    </select>
+                    <div [hidden]="!(editForm.controls.systemClassification?.dirty && editForm.controls.systemClassification?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.systemClassification?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.userClassification" for="field_userClassification">User Classification</label>
+                    <select class="form-control" name="userClassification" [(ngModel)]="loanAccount.userClassification" id="field_userClassification"  required>
+                        <option value="">{{'ifrisGatewayApp.RiskClass.' | translate}}</option>
+                    </select>
+                    <div [hidden]="!(editForm.controls.userClassification?.dirty && editForm.controls.userClassification?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.userClassification?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.nominalRate" for="field_nominalRate">Nominal Rate</label>
+                    <input type="number" class="form-control" name="nominalRate" id="field_nominalRate"
+                        [(ngModel)]="loanAccount.nominalRate" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.expiryDate" for="field_expiryDate">Expiry Date</label>
+                    <div class="input-group">
+                        <input id="field_expiryDate" type="text" class="form-control" name="expiryDate" ngbDatepicker  #expiryDateDp="ngbDatepicker" [(ngModel)]="loanAccount.expiryDate"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="expiryDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.interestSuspended" for="field_interestSuspended">Interest Suspended</label>
+                    <input type="number" class="form-control" name="interestSuspended" id="field_interestSuspended"
+                        [(ngModel)]="loanAccount.interestSuspended" min="0" jhiMin="0"/>
+                    <div [hidden]="!(editForm.controls.interestSuspended?.dirty && editForm.controls.interestSuspended?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.interestSuspended?.errors?.min" jhiTranslate="entity.validation.min" [translateValues]="{ min: 0 }">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.interestSuspended?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.loanProvision" for="field_loanProvision">Loan Provision</label>
+                    <input type="number" class="form-control" name="loanProvision" id="field_loanProvision"
+                        [(ngModel)]="loanAccount.loanProvision" min="0" jhiMin="0"/>
+                    <div [hidden]="!(editForm.controls.loanProvision?.dirty && editForm.controls.loanProvision?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.loanProvision?.errors?.min" jhiTranslate="entity.validation.min" [translateValues]="{ min: 0 }">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.loanProvision?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.economicSector" for="field_economicSector">Economic Sector</label>
+                    <input type="text" class="form-control" name="economicSector" id="field_economicSector"
+                        [(ngModel)]="loanAccount.economicSector" required/>
+                    <div [hidden]="!(editForm.controls.economicSector?.dirty && editForm.controls.economicSector?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.economicSector?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.economicSubSector" for="field_economicSubSector">Economic Sub Sector</label>
+                    <input type="text" class="form-control" name="economicSubSector" id="field_economicSubSector"
+                        [(ngModel)]="loanAccount.economicSubSector" required/>
+                    <div [hidden]="!(editForm.controls.economicSubSector?.dirty && editForm.controls.economicSubSector?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.economicSubSector?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.appraisalMonth" for="field_appraisalMonth">Appraisal Month</label>
+                    <div class="input-group">
+                        <input id="field_appraisalMonth" type="text" class="form-control" name="appraisalMonth" ngbDatepicker  #appraisalMonthDp="ngbDatepicker" [(ngModel)]="loanAccount.appraisalMonth"
+                        required/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="appraisalMonthDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div [hidden]="!(editForm.controls.appraisalMonth?.dirty && editForm.controls.appraisalMonth?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.appraisalMonth?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

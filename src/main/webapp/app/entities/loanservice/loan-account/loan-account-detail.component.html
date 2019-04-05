@@ -1,0 +1,103 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="loanAccount">
+            <h2><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.detail.title">Loan Account</span> {{loanAccount.id}}</h2>
+            <hr>
+            <ifris-alert-error></ifris-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.sbu">Sbu</span></dt>
+                <dd>
+                    <span>{{loanAccount.sbu}}</span>
+                </dd>
+                <dt><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.rmCode">Rm Code</span></dt>
+                <dd>
+                    <span>{{loanAccount.rmCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.glCode">Gl Code</span></dt>
+                <dd>
+                    <span>{{loanAccount.glCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.schemeCode">Scheme Code</span></dt>
+                <dd>
+                    <span>{{loanAccount.schemeCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.customerCode">Customer Code</span></dt>
+                <dd>
+                    <span>{{loanAccount.customerCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.accountNumber">Account Number</span></dt>
+                <dd>
+                    <span>{{loanAccount.accountNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.accountName">Account Name</span></dt>
+                <dd>
+                    <span>{{loanAccount.accountName}}</span>
+                </dd>
+                <dt><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.currencyCode">Currency Code</span></dt>
+                <dd>
+                    <span>{{loanAccount.currencyCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.openingDate">Opening Date</span></dt>
+                <dd>
+                    <span>{{loanAccount.openingDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.accountBalance">Account Balance</span></dt>
+                <dd>
+                    <span>{{loanAccount.accountBalance}}</span>
+                </dd>
+                <dt><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.limitAmount">Limit Amount</span></dt>
+                <dd>
+                    <span>{{loanAccount.limitAmount}}</span>
+                </dd>
+                <dt><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.systemClassification">System Classification</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'ifrisGatewayApp.RiskClass.' + loanAccount.systemClassification}}">{{loanAccount.systemClassification}}</span>
+                </dd>
+                <dt><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.userClassification">User Classification</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'ifrisGatewayApp.RiskClass.' + loanAccount.userClassification}}">{{loanAccount.userClassification}}</span>
+                </dd>
+                <dt><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.nominalRate">Nominal Rate</span></dt>
+                <dd>
+                    <span>{{loanAccount.nominalRate}}</span>
+                </dd>
+                <dt><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.expiryDate">Expiry Date</span></dt>
+                <dd>
+                    <span>{{loanAccount.expiryDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.interestSuspended">Interest Suspended</span></dt>
+                <dd>
+                    <span>{{loanAccount.interestSuspended}}</span>
+                </dd>
+                <dt><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.loanProvision">Loan Provision</span></dt>
+                <dd>
+                    <span>{{loanAccount.loanProvision}}</span>
+                </dd>
+                <dt><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.economicSector">Economic Sector</span></dt>
+                <dd>
+                    <span>{{loanAccount.economicSector}}</span>
+                </dd>
+                <dt><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.economicSubSector">Economic Sub Sector</span></dt>
+                <dd>
+                    <span>{{loanAccount.economicSubSector}}</span>
+                </dd>
+                <dt><span jhiTranslate="ifrisGatewayApp.loanserviceLoanAccount.appraisalMonth">Appraisal Month</span></dt>
+                <dd>
+                    <span>{{loanAccount.appraisalMonth}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/loan-account', loanAccount.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

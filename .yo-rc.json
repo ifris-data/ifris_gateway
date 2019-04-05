@@ -2,7 +2,8 @@
     "generator-jhipster": {
         "promptValues": {
             "packageName": "io.github.ifris.gateway",
-            "nativeLanguage": "en"
+            "nativeLanguage": "en",
+            "microservicePath": "../loan_service"
         },
         "jhipsterVersion": "5.8.2",
         "applicationType": "gateway",
